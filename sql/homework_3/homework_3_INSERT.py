@@ -25,6 +25,9 @@ class LastFM:
         return top_artist
 
     def artist_gettoptags(self, artist):
+        """
+        Получение тэгов(жанров) из топ чарта
+        """
         artist_gettoptags_params = {
             'method': 'artist.gettoptags',
             'artist': artist
@@ -33,6 +36,9 @@ class LastFM:
         return response
 
     def artist_gettopalbums(self, artist, limit):
+        """"
+        Получение топ альбомов артиста
+        """
         artist_gettopalbums_params = {
             'method': 'artist.gettopalbums',
             'artist': artist,
@@ -44,6 +50,9 @@ class LastFM:
         return album
 
     def album_getinfo(self, artist, album):
+        """
+        Получение информации о альбоме
+        """
         album_getinfo_params = {
             'method': 'album.getinfo',
             'artist': artist,
@@ -53,7 +62,7 @@ class LastFM:
         return response
 
 
-db = 'postgresql://npuko:1234@localhost:5432/homework'
+db = 'postgresql://@localhost:5432/'
 engine = sqlalchemy.create_engine(db)
 connection = engine.connect()
 
