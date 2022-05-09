@@ -22,7 +22,6 @@ class MyIter:       # Задание 1, 3
 
     def __iter__(self):
         self.cursor = -1
-        self.cursor2 = -1
         return self
 
     def __next__(self):
